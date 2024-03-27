@@ -20,7 +20,10 @@ const App = () => {
     let seconds=time.getSeconds();
     const meridien=hours>=12?"PM":"AM";
     hours=hours%12 ||12;
-    return  `${hours}:${minutes}:${seconds} ${meridien}`;
+    return  `${padzero(hours)}:${padzero(minutes)}:${padzero(seconds)} ${meridien}`;
+  }
+  function padzero(number){
+    return number<10? `0${number}`:`${number}`;
   }
 
   return (
